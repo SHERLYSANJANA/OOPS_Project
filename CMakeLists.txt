@@ -10,10 +10,14 @@ include_directories(engine/graphics)
 include_directories(engine/physics)
 
 # Automatically find and include all your source files
-file(GLOB_RECURSE SOURCES 
-    "main.cpp"
-    "engine/*.cpp"
+# Use GLOB_RECURSE with CONFIGURE_DEPENDS so CMake regenerates when files change.
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/main.cpp"
+    "${CMAKE_SOURCE_DIR}/engine/*.cpp"
+    "${CMAKE_SOURCE_DIR}/engine/*/*.cpp"
 )
+
+message(STATUS "SOURCES = ${SOURCES}")
 
 add_executable(My2DGame ${SOURCES})
 
