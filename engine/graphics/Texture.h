@@ -11,7 +11,7 @@ class texture{
     int height =0;
 
 public:
-    texture();
+
     bool loadfromfile(const char* filepath);;
     void destroy();
 

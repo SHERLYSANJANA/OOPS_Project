@@ -12,6 +12,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/core/Input.cpp" "CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/core/sokol_implement.cpp" "CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Renderer.cpp" "CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj.d"
+  "C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Texture.cpp" "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj.d"
+  "C:/Users/varsh/OneDrive/Desktop/oops/game/Gridmanager.cpp" "CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.obj.d"
+  "C:/Users/varsh/OneDrive/Desktop/oops/game/entity.cpp" "CMakeFiles/My2DGame.dir/game/entity.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/game/entity.cpp.obj.d"
+  "C:/Users/varsh/OneDrive/Desktop/oops/game/game.cpp" "CMakeFiles/My2DGame.dir/game/game.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/game/game.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/main.cpp" "CMakeFiles/My2DGame.dir/main.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/main.cpp.obj.d"
   )
 

@@ -224,6 +224,102 @@ engine/graphics/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.s
 .PHONY : engine/graphics/Renderer.cpp.s
 
+engine/graphics/Texture.obj: engine/graphics/Texture.cpp.obj
+.PHONY : engine/graphics/Texture.obj
+
+# target to build an object file
+engine/graphics/Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj
+.PHONY : engine/graphics/Texture.cpp.obj
+
+engine/graphics/Texture.i: engine/graphics/Texture.cpp.i
+.PHONY : engine/graphics/Texture.i
+
+# target to preprocess a source file
+engine/graphics/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.i
+.PHONY : engine/graphics/Texture.cpp.i
+
+engine/graphics/Texture.s: engine/graphics/Texture.cpp.s
+.PHONY : engine/graphics/Texture.s
+
+# target to generate assembly for a file
+engine/graphics/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.s
+.PHONY : engine/graphics/Texture.cpp.s
+
+game/Gridmanager.obj: game/Gridmanager.cpp.obj
+.PHONY : game/Gridmanager.obj
+
+# target to build an object file
+game/Gridmanager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.obj
+.PHONY : game/Gridmanager.cpp.obj
+
+game/Gridmanager.i: game/Gridmanager.cpp.i
+.PHONY : game/Gridmanager.i
+
+# target to preprocess a source file
+game/Gridmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.i
+.PHONY : game/Gridmanager.cpp.i
+
+game/Gridmanager.s: game/Gridmanager.cpp.s
+.PHONY : game/Gridmanager.s
+
+# target to generate assembly for a file
+game/Gridmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.s
+.PHONY : game/Gridmanager.cpp.s
+
+game/entity.obj: game/entity.cpp.obj
+.PHONY : game/entity.obj
+
+# target to build an object file
+game/entity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/entity.cpp.obj
+.PHONY : game/entity.cpp.obj
+
+game/entity.i: game/entity.cpp.i
+.PHONY : game/entity.i
+
+# target to preprocess a source file
+game/entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/entity.cpp.i
+.PHONY : game/entity.cpp.i
+
+game/entity.s: game/entity.cpp.s
+.PHONY : game/entity.s
+
+# target to generate assembly for a file
+game/entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/entity.cpp.s
+.PHONY : game/entity.cpp.s
+
+game/game.obj: game/game.cpp.obj
+.PHONY : game/game.obj
+
+# target to build an object file
+game/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/game.cpp.obj
+.PHONY : game/game.cpp.obj
+
+game/game.i: game/game.cpp.i
+.PHONY : game/game.i
+
+# target to preprocess a source file
+game/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/game.cpp.i
+.PHONY : game/game.cpp.i
+
+game/game.s: game/game.cpp.s
+.PHONY : game/game.s
+
+# target to generate assembly for a file
+game/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/game/game.cpp.s
+.PHONY : game/game.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -269,6 +365,18 @@ help:
 	@echo ... engine/graphics/Renderer.obj
 	@echo ... engine/graphics/Renderer.i
 	@echo ... engine/graphics/Renderer.s
+	@echo ... engine/graphics/Texture.obj
+	@echo ... engine/graphics/Texture.i
+	@echo ... engine/graphics/Texture.s
+	@echo ... game/Gridmanager.obj
+	@echo ... game/Gridmanager.i
+	@echo ... game/Gridmanager.s
+	@echo ... game/entity.obj
+	@echo ... game/entity.i
+	@echo ... game/entity.s
+	@echo ... game/game.obj
+	@echo ... game/game.i
+	@echo ... game/game.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

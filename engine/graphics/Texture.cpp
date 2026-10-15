@@ -1,39 +1,51 @@
+#include <cstring>
 #include <fstream>
 #include <vector>
 
-#include "texture.h"
+#include "Texture.h"
 
-    
+texture::texture() {}
 
-    void texture::destroy(){
-        if(img.id != SG_INVALID_ID){
-            sg_destroy_image(img);
-        }
-    };
+void texture::destroy() {
+    if (view.id != SG_INVALID_ID) sg_destroy_view(view);
+    if (sampler.id != SG_INVALID_ID) sg_destroy_sampler(sampler);
+    if (img.id != SG_INVALID_ID) sg_destroy_image(img);
+    img = sg_image{};
+    view = sg_view{};
+    sampler = sg_sampler{};
+}
 
-    sg_image texture::gethandle()const {
-        return img;
-    };
-    int texture::getwidth(){
-        return widht;
-    };
-    int texture::getheight(){
-        return height;
-    };
+sg_image texture::gethandle() const {
+    return img;
+}
+int texture::getwidth() {
+    return widht;
+}
+int texture::getheight() {
+    return height;
+}
+sg_sampler texture::getSampler() {
+    return sampler;
+}
+sg_view texture::getView() {
+    return view;
+}
 
-    // this is just a standard bmp parser
-   bool texture::loadfromfile(const char* filepath) {
+//-------------------------------------------------------------
+//this thing i copied so it may have issues
+// Expects a 32-bit uncompressed BMP.
+bool texture::loadfromfile(const char* filepath) {
     std::ifstream file(filepath, std::ios::binary);
     if (!file) {
         return false;
     }
 
-
     char header[54];
     file.read(header, 54);
-    widht = reinterpret_cast<int>(&header[18]);
-    height = reinterpret_cast<int>(&header[22]);
-    int dataOffset = reinterpret_cast<int>(&header[10]);
+    int dataOffset = 0;
+    std::memcpy(&widht, &header[18], 4);
+    std::memcpy(&height, &header[22], 4);
+    std::memcpy(&dataOffset, &header[10], 4);
 
     // Read raw pixel data directly into a vector
     file.seekg(dataOffset, std::ios::beg);
@@ -44,14 +56,13 @@
     img_desc.width = widht;
     img_desc.height = height;
     img_desc.pixel_format = SG_PIXELFORMAT_RGBA8;
-
     img_desc.data.mip_levels[0].ptr = pixels.data();
     img_desc.data.mip_levels[0].size = pixels.size();
     img = sg_make_image(&img_desc);
 
     sg_view_desc view_desc = {};
     view_desc.texture.image = img;
-    view = sg_make_view(view_desc);
+    view = sg_make_view(&view_desc);
 
     sg_sampler_desc sampler_desc = {};
     sampler_desc.min_filter = SG_FILTER_NEAREST;
@@ -59,15 +70,4 @@
     sampler = sg_make_sampler(&sampler_desc);
     return true;
 }
-
-void texture::destroy() {
-    if (img.id != SG_INVALID_ID) {
-        sg_destroy_image(img);
-    }
-}
-sg_sampler texture::getSampler(){
-    return sampler;
-}
-sg_view texture::getView(){
-    return view;
-}
+//-------------------------------------------------

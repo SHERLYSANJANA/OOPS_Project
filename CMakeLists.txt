@@ -8,6 +8,10 @@ add_executable(My2DGame
     main.cpp
     engine/core/sokol_implement.cpp
     engine/core/Application.cpp
+    engine/graphics/Texture.cpp
+    game/entity.cpp
+    game/Gridmanager.cpp
+    game/game.cpp
     engine/core/Input.cpp
     engine/graphics/Renderer.cpp
 )
