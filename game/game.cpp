@@ -9,37 +9,14 @@ Game::~Game() {
     testTexture.destroy();
 }
 
+//-------------------------ai slopp below---------------------
+
 void Game::createFallbackTexture() {
-    uint32_t pixels[16] = {
-        0xFF00FFFF, 0xFF550055, 0xFF00FFFF, 0xFF550055,
-        0xFF550055, 0xFF00FFFF, 0xFF550055, 0xFF00FFFF,
-        0xFF00FFFF, 0xFF550055, 0xFF00FFFF, 0xFF550055,
-        0xFF550055, 0xFF00FFFF, 0xFF550055, 0xFF00FFFF,
-    };
-
-    sg_image_desc img_desc = {};
-    img_desc.width = 4;
-    img_desc.height = 4;
-    img_desc.pixel_format = SG_PIXELFORMAT_RGBA8;
-    img_desc.data.mip_levels[0].ptr = pixels;
-    img_desc.data.mip_levels[0].size = sizeof(pixels);
-    sg_image img = sg_make_image(&img_desc);
-
-    sg_view_desc view_desc = {};
-    view_desc.texture.image = img;
-    sg_view view = sg_make_view(&view_desc);
-
-    sg_sampler_desc smp_desc = {};
-    smp_desc.min_filter = SG_FILTER_NEAREST;
-    smp_desc.mag_filter = SG_FILTER_NEAREST;
-    sg_sampler smp = sg_make_sampler(&smp_desc);
-
-    testTexture = texture();
     if (!testTexture.loadfromfile("test.bmp")) {
-        std::cout << "[Tutorial] 'test.bmp' not found; fallback ready.\n";
+        testTexture.create_default();
+        std::cout << "[Tutorial] 'test.bmp' not found or invalid; using procedural 2x2 texture.\n";
     }
 }
-
 void Game::init() {
     std::cout << "\n=======================================================\n";
     std::cout << "        2D ENGINE TEST DRIVE & TUTORIAL DEMO           \n";

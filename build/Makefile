@@ -248,6 +248,30 @@ engine/graphics/Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.s
 .PHONY : engine/graphics/Texture.cpp.s
 
+engine/physics/Collider.obj: engine/physics/Collider.cpp.obj
+.PHONY : engine/physics/Collider.obj
+
+# target to build an object file
+engine/physics/Collider.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj
+.PHONY : engine/physics/Collider.cpp.obj
+
+engine/physics/Collider.i: engine/physics/Collider.cpp.i
+.PHONY : engine/physics/Collider.i
+
+# target to preprocess a source file
+engine/physics/Collider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.i
+.PHONY : engine/physics/Collider.cpp.i
+
+engine/physics/Collider.s: engine/physics/Collider.cpp.s
+.PHONY : engine/physics/Collider.s
+
+# target to generate assembly for a file
+engine/physics/Collider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.s
+.PHONY : engine/physics/Collider.cpp.s
+
 game/Gridmanager.obj: game/Gridmanager.cpp.obj
 .PHONY : game/Gridmanager.obj
 
@@ -368,6 +392,9 @@ help:
 	@echo ... engine/graphics/Texture.obj
 	@echo ... engine/graphics/Texture.i
 	@echo ... engine/graphics/Texture.s
+	@echo ... engine/physics/Collider.obj
+	@echo ... engine/physics/Collider.i
+	@echo ... engine/physics/Collider.s
 	@echo ... game/Gridmanager.obj
 	@echo ... game/Gridmanager.i
 	@echo ... game/Gridmanager.s

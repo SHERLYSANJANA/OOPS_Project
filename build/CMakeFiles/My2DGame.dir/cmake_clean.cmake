@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj.d"
   "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj"
   "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj.d"
+  "CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj"
+  "CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj.d"
   "CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.obj"
   "CMakeFiles/My2DGame.dir/game/Gridmanager.cpp.obj.d"
   "CMakeFiles/My2DGame.dir/game/entity.cpp.obj"

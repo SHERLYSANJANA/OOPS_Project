@@ -14,7 +14,7 @@ public:
 
     bool loadfromfile(const char* filepath);;
     void destroy();
-
+    bool create_default();
     sg_image gethandle()const;
     sg_view getView();
     sg_sampler getSampler();
