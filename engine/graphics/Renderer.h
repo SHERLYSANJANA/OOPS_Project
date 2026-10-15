@@ -1,10 +1,12 @@
 #pragma once
-
+#include "texture.h"
 class Renderer {
-    static int tileSize;
+    
 public:
+    static int tileSize;
     static void init(int);
     static void shutdown();
     void drawGrid(int cols,int rows,float tileSize);
     void draw_colored_rect(int x,int y,float r,float g,float b,float alpha);
+    void draw_textured_rect(int x,int y, texture t);
 };

@@ -30,3 +30,14 @@ void Renderer::draw_colored_rect(int x,int y,float r,float g,float b,float alpha
         sgl_v2f((tileSize)*x,(tileSize-1)*y);
     sgl_end();
 }
+void Renderer::draw_textured_rect(int x,int y, texture t){
+    sgl_texture(t.getView(),t.getSampler());
+    sgl_begin_quads();
+        sgl_v2f(tileSize*x,tileSize*y);
+        sgl_v2f((tileSize+1)*x,tileSize*y);
+        sgl_v2f((tileSize+1)*x,(tileSize-1)*y);
+        sgl_v2f((tileSize)*x,(tileSize-1)*y);
+    sgl_end();
+    sgl_texture(sg_view{},sg_sampler{});
+
+};
