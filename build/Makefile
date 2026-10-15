@@ -176,6 +176,30 @@ engine/core/Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/core/Input.cpp.s
 .PHONY : engine/core/Input.cpp.s
 
+engine/core/sokol_implement.obj: engine/core/sokol_implement.cpp.obj
+.PHONY : engine/core/sokol_implement.obj
+
+# target to build an object file
+engine/core/sokol_implement.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj
+.PHONY : engine/core/sokol_implement.cpp.obj
+
+engine/core/sokol_implement.i: engine/core/sokol_implement.cpp.i
+.PHONY : engine/core/sokol_implement.i
+
+# target to preprocess a source file
+engine/core/sokol_implement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.i
+.PHONY : engine/core/sokol_implement.cpp.i
+
+engine/core/sokol_implement.s: engine/core/sokol_implement.cpp.s
+.PHONY : engine/core/sokol_implement.s
+
+# target to generate assembly for a file
+engine/core/sokol_implement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.s
+.PHONY : engine/core/sokol_implement.cpp.s
+
 engine/graphics/Renderer.obj: engine/graphics/Renderer.cpp.obj
 .PHONY : engine/graphics/Renderer.obj
 
@@ -199,54 +223,6 @@ engine/graphics/Renderer.s: engine/graphics/Renderer.cpp.s
 engine/graphics/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.s
 .PHONY : engine/graphics/Renderer.cpp.s
-
-engine/graphics/Texture.obj: engine/graphics/Texture.cpp.obj
-.PHONY : engine/graphics/Texture.obj
-
-# target to build an object file
-engine/graphics/Texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj
-.PHONY : engine/graphics/Texture.cpp.obj
-
-engine/graphics/Texture.i: engine/graphics/Texture.cpp.i
-.PHONY : engine/graphics/Texture.i
-
-# target to preprocess a source file
-engine/graphics/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.i
-.PHONY : engine/graphics/Texture.cpp.i
-
-engine/graphics/Texture.s: engine/graphics/Texture.cpp.s
-.PHONY : engine/graphics/Texture.s
-
-# target to generate assembly for a file
-engine/graphics/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.s
-.PHONY : engine/graphics/Texture.cpp.s
-
-engine/physics/Collider.obj: engine/physics/Collider.cpp.obj
-.PHONY : engine/physics/Collider.obj
-
-# target to build an object file
-engine/physics/Collider.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj
-.PHONY : engine/physics/Collider.cpp.obj
-
-engine/physics/Collider.i: engine/physics/Collider.cpp.i
-.PHONY : engine/physics/Collider.i
-
-# target to preprocess a source file
-engine/physics/Collider.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.i
-.PHONY : engine/physics/Collider.cpp.i
-
-engine/physics/Collider.s: engine/physics/Collider.cpp.s
-.PHONY : engine/physics/Collider.s
-
-# target to generate assembly for a file
-engine/physics/Collider.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\My2DGame.dir\build.make CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.s
-.PHONY : engine/physics/Collider.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -287,15 +263,12 @@ help:
 	@echo ... engine/core/Input.obj
 	@echo ... engine/core/Input.i
 	@echo ... engine/core/Input.s
+	@echo ... engine/core/sokol_implement.obj
+	@echo ... engine/core/sokol_implement.i
+	@echo ... engine/core/sokol_implement.s
 	@echo ... engine/graphics/Renderer.obj
 	@echo ... engine/graphics/Renderer.i
 	@echo ... engine/graphics/Renderer.s
-	@echo ... engine/graphics/Texture.obj
-	@echo ... engine/graphics/Texture.i
-	@echo ... engine/graphics/Texture.s
-	@echo ... engine/physics/Collider.obj
-	@echo ... engine/physics/Collider.i
-	@echo ... engine/physics/Collider.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -1,31 +1,24 @@
 cmake_minimum_required(VERSION 3.12)
-project(My2DGame CXX)
+project(My2DGame)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-#  header files
-include_directories(sokol)
-include_directories(engine/core)
-include_directories(engine/graphics)
-include_directories(engine/physics)
 
-# Automatically find and include all your source files
-# Use GLOB_RECURSE with CONFIGURE_DEPENDS so CMake regenerates when files change.
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_SOURCE_DIR}/main.cpp"
-    "${CMAKE_SOURCE_DIR}/engine/*.cpp"
-    "${CMAKE_SOURCE_DIR}/engine/*/*.cpp"
+add_executable(My2DGame
+    main.cpp
+    engine/core/sokol_implement.cpp
+    engine/core/Application.cpp
+    engine/core/Input.cpp
+    engine/graphics/Renderer.cpp
 )
 
-message(STATUS "SOURCES = ${SOURCES}")
-
-add_executable(My2DGame ${SOURCES})
-
-# Link required platform graphics libraries
+target_include_directories(My2DGame PRIVATE 
+    engine/core
+    engine/graphics
+    engine/physics
+    sokol
+)
 if(WIN32)
-    # Windows links automatically via Sokol pragmas
-elseif(APPLE)
-    target_link_libraries(My2DGame PRIVATE "-framework Metal" "-framework Cocoa" "-framework QuartzCore")
-elseif(UNIX)
-    target_link_libraries(My2DGame PRIVATE GL X11 m dl)
+    target_compile_definitions(My2DGame PRIVATE SOKOL_GLCORE SOKOL_WIN32_FORCE_MAIN)
+    target_link_libraries(My2DGame PRIVATE opengl32 gdi32 ole32)
 endif()

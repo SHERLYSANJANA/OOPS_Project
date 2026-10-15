@@ -1,6 +1,5 @@
-#include "engine/core/Application.h"
+#include "Application.h"
 
-sapp_desc sokol_main(int argc ,char* argv[]){
-    Application &app = Application::get();
-    return app.getConfig();
+sapp_desc sokol_main(int argc, char* argv[]) {
+    return Application::getConfig();
 }

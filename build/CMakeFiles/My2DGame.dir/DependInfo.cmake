@@ -10,9 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/core/Application.cpp" "CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/core/Input.cpp" "CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj.d"
+  "C:/Users/varsh/OneDrive/Desktop/oops/engine/core/sokol_implement.cpp" "CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Renderer.cpp" "CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj.d"
-  "C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Texture.cpp" "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj.d"
-  "C:/Users/varsh/OneDrive/Desktop/oops/engine/physics/Collider.cpp" "CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj.d"
   "C:/Users/varsh/OneDrive/Desktop/oops/main.cpp" "CMakeFiles/My2DGame.dir/main.cpp.obj" "gcc" "CMakeFiles/My2DGame.dir/main.cpp.obj.d"
   )
 

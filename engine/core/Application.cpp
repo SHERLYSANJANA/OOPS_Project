@@ -1,9 +1,13 @@
-#include "Application.h"
 
+
+
+
+#include "Application.h"
 
 #include "Input.h"
 #include "../graphics/Renderer.h"
 #include "sokol_gfx.h"
+
 #include "sokol_glue.h"
 #include "sokol_log.h"
 
@@ -25,44 +29,50 @@ sapp_desc Application::getConfig() {
     d.width = 1280;
     d.height = 720;
     d.window_title = "Custom 2DEngine";
-    d.logger = slog_func;
+    d.logger.func = slog_func;
     return d;
 }
 
-void Application::init(){
+void Application::init() {
     sg_desc sd{};
     sd.environment = sglue_environment();
-    sd.logger = slog_func;
+    sd.logger.func = slog_func;
     sg_setup(&sd);
-    //renderer and game system initize point
+
     Renderer::init();
 }
+
 void Application::input(const sapp_event* event) {
     Input::handle_event(event);
 }
-void Application::cleanup(){
+
+void Application::cleanup() {
     Renderer::shutdown();
     sg_shutdown();
 }
 
-
-
 void Application::frame() {
+    
+    sg_pass pass{};
+    pass.swapchain = sglue_swapchain();
+    pass.action.colors[0].load_action = SG_LOADACTION_CLEAR;
+    pass.action.colors[0].clear_value = { 0.1f, 0.1f, 0.15f, 1.0f };
+    sg_begin_pass(&pass);
+    sg_end_pass();
+    sg_commit();
     Input_manager input_mgr;
-
-    // Test a keyboard key (e.g., 'W')
-    if (input_mgr.is_pressed('W')) {
-        std::cout << "Key W is pressed!\n";
+    //checking  the code for input
+    for (char k = 'A'; k <= 'Z'; ++k) {
+        if (input_mgr.is_pressed(k)) {
+            std::cout << "Key " << k << " is pressed!\n";
+        }
     }
 
-    // Test mouse buttons
     if (input_mgr.is_left_mouse_button_pressed()) {
         std::cout << "Left Mouse Button clicked!\n";
     }
-    
+
     if (input_mgr.is_right_mouse_button_pressed()) {
         std::cout << "Right Mouse Button clicked!\n";
     }
-
-    // Render code goes here...
 }

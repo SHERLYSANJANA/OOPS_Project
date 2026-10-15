@@ -71,119 +71,102 @@ include CMakeFiles/My2DGame.dir/flags.make
 CMakeFiles/My2DGame.dir/codegen:
 .PHONY : CMakeFiles/My2DGame.dir/codegen
 
+CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
+CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
+CMakeFiles/My2DGame.dir/main.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/main.cpp
+CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/My2DGame.dir/main.cpp.obj"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/main.cpp.obj -MF CMakeFiles\My2DGame.dir\main.cpp.obj.d -o CMakeFiles\My2DGame.dir\main.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\main.cpp
+
+CMakeFiles/My2DGame.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/main.cpp.i"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\main.cpp > CMakeFiles\My2DGame.dir\main.cpp.i
+
+CMakeFiles/My2DGame.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/main.cpp.s"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\main.cpp -o CMakeFiles\My2DGame.dir\main.cpp.s
+
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/core/sokol_implement.cpp
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\core\sokol_implement.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\core\sokol_implement.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\core\sokol_implement.cpp
+
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.i"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\core\sokol_implement.cpp > CMakeFiles\My2DGame.dir\engine\core\sokol_implement.cpp.i
+
+CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.s"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\core\sokol_implement.cpp -o CMakeFiles\My2DGame.dir\engine\core\sokol_implement.cpp.s
+
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/core/Application.cpp
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\core\Application.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\core\Application.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\core\Application.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\core\Application.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp
 
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/core/Application.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp > CMakeFiles\My2DGame.dir\engine\core\Application.cpp.i
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp > CMakeFiles\My2DGame.dir\engine\core\Application.cpp.i
 
 CMakeFiles/My2DGame.dir/engine/core/Application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/core/Application.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp -o CMakeFiles\My2DGame.dir\engine\core\Application.cpp.s
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Application.cpp -o CMakeFiles\My2DGame.dir\engine\core\Application.cpp.s
 
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/core/Input.cpp
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\core\Input.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\core\Input.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\core\Input.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\core\Input.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp
 
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/core/Input.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp > CMakeFiles\My2DGame.dir\engine\core\Input.cpp.i
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp > CMakeFiles\My2DGame.dir\engine\core\Input.cpp.i
 
 CMakeFiles/My2DGame.dir/engine/core/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/core/Input.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp -o CMakeFiles\My2DGame.dir\engine\core\Input.cpp.s
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\core\Input.cpp -o CMakeFiles\My2DGame.dir\engine\core\Input.cpp.s
 
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Renderer.cpp
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj"
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp
 
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp > CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.i
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp > CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.i
 
 CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp -o CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.s
-
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/graphics/Texture.cpp
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\graphics\Texture.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\graphics\Texture.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Texture.cpp
-
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Texture.cpp > CMakeFiles\My2DGame.dir\engine\graphics\Texture.cpp.i
-
-CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Texture.cpp -o CMakeFiles\My2DGame.dir\engine\graphics\Texture.cpp.s
-
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/engine/physics/Collider.cpp
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj -MF CMakeFiles\My2DGame.dir\engine\physics\Collider.cpp.obj.d -o CMakeFiles\My2DGame.dir\engine\physics\Collider.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\engine\physics\Collider.cpp
-
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\engine\physics\Collider.cpp > CMakeFiles\My2DGame.dir\engine\physics\Collider.cpp.i
-
-CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\physics\Collider.cpp -o CMakeFiles\My2DGame.dir\engine\physics\Collider.cpp.s
-
-CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/flags.make
-CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/includes_CXX.rsp
-CMakeFiles/My2DGame.dir/main.cpp.obj: C:/Users/varsh/OneDrive/Desktop/oops/main.cpp
-CMakeFiles/My2DGame.dir/main.cpp.obj: CMakeFiles/My2DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/My2DGame.dir/main.cpp.obj"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My2DGame.dir/main.cpp.obj -MF CMakeFiles\My2DGame.dir\main.cpp.obj.d -o CMakeFiles\My2DGame.dir\main.cpp.obj -c C:\Users\varsh\OneDrive\Desktop\oops\main.cpp
-
-CMakeFiles/My2DGame.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My2DGame.dir/main.cpp.i"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\varsh\OneDrive\Desktop\oops\main.cpp > CMakeFiles\My2DGame.dir\main.cpp.i
-
-CMakeFiles/My2DGame.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My2DGame.dir/main.cpp.s"
-	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\main.cpp -o CMakeFiles\My2DGame.dir\main.cpp.s
+	C:\Users\varsh\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\varsh\OneDrive\Desktop\oops\engine\graphics\Renderer.cpp -o CMakeFiles\My2DGame.dir\engine\graphics\Renderer.cpp.s
 
 # Object files for target My2DGame
 My2DGame_OBJECTS = \
+"CMakeFiles/My2DGame.dir/main.cpp.obj" \
+"CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj" \
 "CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj" \
 "CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj" \
-"CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj" \
-"CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj" \
-"CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj" \
-"CMakeFiles/My2DGame.dir/main.cpp.obj"
+"CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj"
 
 # External object files for target My2DGame
 My2DGame_EXTERNAL_OBJECTS =
 
+My2DGame.exe: CMakeFiles/My2DGame.dir/main.cpp.obj
+My2DGame.exe: CMakeFiles/My2DGame.dir/engine/core/sokol_implement.cpp.obj
 My2DGame.exe: CMakeFiles/My2DGame.dir/engine/core/Application.cpp.obj
 My2DGame.exe: CMakeFiles/My2DGame.dir/engine/core/Input.cpp.obj
 My2DGame.exe: CMakeFiles/My2DGame.dir/engine/graphics/Renderer.cpp.obj
-My2DGame.exe: CMakeFiles/My2DGame.dir/engine/graphics/Texture.cpp.obj
-My2DGame.exe: CMakeFiles/My2DGame.dir/engine/physics/Collider.cpp.obj
-My2DGame.exe: CMakeFiles/My2DGame.dir/main.cpp.obj
 My2DGame.exe: CMakeFiles/My2DGame.dir/build.make
 My2DGame.exe: CMakeFiles/My2DGame.dir/linkLibs.rsp
 My2DGame.exe: CMakeFiles/My2DGame.dir/objects1.rsp
 My2DGame.exe: CMakeFiles/My2DGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable My2DGame.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\varsh\OneDrive\Desktop\oops\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable My2DGame.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\My2DGame.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -30,6 +30,12 @@ bool Input::is_key_pressed(sapp_keycode key_code) {
     }
     return false;
 }
+bool Input::is_mouse_button_pressed(int button) {
+    if (button >= 0 && button < 8) {
+        return s_mouse_buttons[button];
+    }
+    return false;
+}
 
 
 
@@ -40,11 +46,11 @@ bool Input_manager:: is_pressed(char key){
         return false;
     }
     
-    return I.is_key_pressed(static_cast<sapp_keycode>(upper_key));
+    return Input::is_key_pressed(static_cast<sapp_keycode>(upper_key));
 }
 bool  Input_manager:: is_left_mouse_button_pressed(){
-    return I.is_key_pressed(SAPP_MOUSEBUTTON_LEFT);
+    return Input::is_mouse_button_pressed(SAPP_MOUSEBUTTON_LEFT);
 };
 bool  Input_manager::is_right_mouse_button_pressed(){
-    return I.is_key_pressed(SAPP_MOUSEBUTTON_RIGHT);
+    return Input::is_mouse_button_pressed(SAPP_MOUSEBUTTON_RIGHT);
 };  
