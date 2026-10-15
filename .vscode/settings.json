@@ -1,0 +1,7 @@
+{
+    "cmake.sourceDirectory": "C:/Users/varsh/OneDrive/Desktop/oops/sokol/tests"
+}
+"includePath": [
+    "${workspaceFolder}/**",
+    "${workspaceFolder}/sokol"
+]

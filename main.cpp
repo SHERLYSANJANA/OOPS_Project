@@ -1,8 +1,6 @@
-#define SOKOL_IMPL
-#define SOKOL_GLCORE
+#include "engine/core/Application.h"
 
-#include "sokol/sokol_time.h"
-
-int main(){
-
+sapp_desc sokol_main(int argc ,char* argv[]){
+    Application &app = Application::get();
+    return app.getConfig();
 }
