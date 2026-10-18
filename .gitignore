@@ -1,8 +1,6 @@
 build/
 cmake-build-*/
 .cache/
-.vscode/
-*.exe
 *.obj
 *.o
 *.dll
