@@ -32,7 +32,7 @@
             return grid[x][y];
         }
          
-        return static_cast<TileType>(2);  //basically will return obstackle
+        return TileType::obstacle; // FIXED: index 2 was Player, not obstacle
 
         
     };

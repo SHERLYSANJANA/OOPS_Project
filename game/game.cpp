@@ -2,138 +2,236 @@
 #include "Input.h"
 #include <iostream>
 
+// ---------------------------------------------------------------
+// Levels. Legend:  # wall   P player   C coin   H potion   X exit
+//                  R random enemy      E chaser enemy      . empty
+// Every level is 40 columns x 22 rows (matches the 1280x720 window).
+// ---------------------------------------------------------------
+static const std::vector<std::vector<std::string>> LEVELS = {
+    {
+        "########################################",
+        "#......................................#",
+        "#.P.....C.........................C....#",
+        "#...................C..................#",
+        "#......................................#",
+        "#......................................#",
+        "#...#############.....##############...#",
+        "#......................................#",
+        "#......................................#",
+        "#.................R....................#",
+        "#.........#.........C.......#..........#",
+        "#.........#.................#..........#",
+        "#....C....#.................#.......C..#",
+        "#.........#.................#..........#",
+        "#.........#...###########...#..........#",
+        "#.........#.................#..........#",
+        "#.........#.................#..........#",
+        "#.........#........H........#..........#",
+        "#.........#.................#....E.....#",
+        "#.........#...C.........C...#..........#",
+        "#.........#.................#........X.#",
+        "########################################",
+    },
+    {
+        "########################################",
+        "#......................................#",
+        "#.P...............R.................C..#",
+        "#......................................#",
+        "#.###.#############################....#",
+        "#......................................#",
+        "#.C.................C.........E.....C..#",
+        "#......................................#",
+        "#.#.##########################.####....#",
+        "#......................................#",
+        "#.C.......E.........C...............C..#",
+        "#......................................#",
+        "#.###.#############################....#",
+        "#......................................#",
+        "#.C...............R.H...............C..#",
+        "#......................................#",
+        "#.#.##########################.####....#",
+        "#......................................#",
+        "#...................C.........E........#",
+        "#..H.................................C.#",
+        "#.X....................................#",
+        "########################################",
+    }
+};
+
 Game::Game(int W, int H, int size)
     : Board(W, H), tileSize(size), gridCols(W), gridRows(H) {}
 
-Game::~Game() {
-    testTexture.destroy();
-}
+Game::~Game() {}
 
-//-------------------------ai slopp below---------------------
-
-void Game::createFallbackTexture() {
-    if (!testTexture.loadfromfile("test.bmp")) {
-        testTexture.create_default();
-        std::cout << "[Tutorial] 'test.bmp' not found or invalid; using procedural 2x2 texture.\n";
-    }
-}
 void Game::init() {
-    std::cout << "\n=======================================================\n";
-    std::cout << "        2D ENGINE TEST DRIVE & TUTORIAL DEMO           \n";
-    std::cout << "=======================================================\n";
-    std::cout << " Controls:\n";
-    std::cout << "   [W, A, S, D] -> Move Player (Green box)\n";
-    std::cout << "   [Left Click] -> Place Wall (Blue box)\n";
-    std::cout << "   [Right Click]-> Remove Wall\n";
-    std::cout << "=======================================================\n\n";
-
-    createFallbackTexture();
-
-    std::cout << "[Test 1: Grid Dimensions] Width: " << Board.GetWidht()
-              << " | Height: " << Board.GetHeight() << "\n";
-
-    // 1. Spawning Obstacles using unique_ptr directly
-    for (int x = 4; x <= 14; ++x) {
-        entities.push_back(std::unique_ptr<Entity>(new colored_entity(
-            x, 7, TileType::obstacle, 80, 80, 160, 255, Board
-        )));
-    }
-
-    // 2. Spawning Red Enemy
-    entities.push_back(std::unique_ptr<Entity>(new colored_entity(
-        18, 10, TileType::Enemy, 240, 50, 50, 255, Board
-    )));
-
-    // 3. Spawning Green Player
-    auto p = std::unique_ptr<Entity>(new colored_entity(
-        2, 2, TileType::Player, 50, 220, 80, 255, Board
-    ));
-    player = p.get();
-    entities.push_back(std::move(p));
-
-    std::cout << "[Test 5: Out of bounds check (-1, 0)]: " 
-              << (Board.isOutOfBounds(-1, 0) ? "PASS (True)" : "FAIL") << "\n";
+    std::cout << "\n=== COIN DUNGEON ===\n"
+              << " WASD = move | collect ALL yellow coins, then reach the exit\n"
+              << " Red = wanderer, Orange = chaser (touching them costs a life)\n"
+              << " Pink = +1 life | R = restart\n\n";
+    loadLevel(0);
 }
 
+// ----------------------------------------------------------------
+void Game::clearLevel() {
+    entities.clear();      // destructors free their own grid tiles
+    pending.clear();
+    player = nullptr;
+}
+
+void Game::loadLevel(int index) {
+    clearLevel();
+    level = index;
+    coinsLeft = 0;
+
+    const auto& map = LEVELS[index];
+    for (int y = 0; y < (int)map.size() && y < gridRows; ++y) {
+        for (int x = 0; x < (int)map[y].size() && x < gridCols; ++x) {
+            switch (map[y][x]) {
+                case '#': spawn<Wall>(x, y); break;
+                case 'C': spawn<Coin>(x, y); ++coinsLeft; break;
+                case 'H': spawn<Potion>(x, y); break;
+                case 'X': spawn<Exit>(x, y); break;
+                case 'R': spawn<RandomEnemy>(x, y); break;
+                case 'E': spawn<ChaserEnemy>(x, y); break;
+                case 'P': spawnX = x; spawnY = y; player = spawn<Player>(x, y); break;
+                default: break;
+            }
+        }
+    }
+    flushPending();
+    std::cout << "[Level " << (index + 1) << "] coins: " << coinsLeft << "\n";
+}
+
+void Game::restart() {
+    score = 0; lives = 3; state = GameState::Playing;
+    levelChangeRequested = false;
+    loadLevel(0);
+}
+
+// ----------------------------------------------------------------
+void Game::flushPending() {
+    for (auto& e : pending) entities.push_back(std::move(e));
+    pending.clear();
+}
+
+void Game::removeDead() {
+    for (size_t i = 0; i < entities.size(); ) {
+        if (!entities[i]->isAlive()) {
+            if (entities[i].get() == player) player = nullptr;
+            entities.erase(entities.begin() + i);
+        } else ++i;
+    }
+}
+
+// ----------------------------------------------------------------
 void Game::update(float dt) {
-    if (moveTimer > 0.0f) {
-        moveTimer -= dt;
-    }
-
     Input_manager input;
+    if (input.is_pressed('R')) { restart(); return; }
+    if (state != GameState::Playing) return;
 
-    // Movement
-    if (player && moveTimer <= 0.0f) {
-        int dx = 0;
-        int dy = 0;
+    // 1. every entity runs ITS OWN update() -> polymorphism
+    for (size_t i = 0; i < entities.size(); ++i)
+        if (entities[i]->isAlive()) entities[i]->update(dt, *this);
 
-        if (input.is_pressed('W')) dy -= 1;
-        else if (input.is_pressed('S')) dy += 1;
-        else if (input.is_pressed('A')) dx -= 1;
-        else if (input.is_pressed('D')) dx += 1;
+    // 2. housekeeping after the loop (never modify the list while iterating)
+    flushPending();
+    removeDead();
 
-        if (dx != 0 || dy != 0) {
-            int oldX = player->getX();
-            int oldY = player->getY();
-            int targetX = oldX + dx;
-            int targetY = oldY + dy;
-
-            player->SetPos(targetX, targetY, Board);
-
-            if (player->getX() == targetX && player->getY() == targetY) {
-                std::cout << "[Player Moved] -> (" << targetX << ", " << targetY << ")\n";
-            } else {
-                std::cout << "[Collision Blocked] -> Cannot move into (" 
-                          << targetX << ", " << targetY << ")!\n";
-            }
-            moveTimer = 0.12f;
+    // 3. level change / win / lose
+    if (levelChangeRequested) {
+        levelChangeRequested = false;
+        if (level + 1 >= (int)LEVELS.size()) {
+            state = GameState::Won;
+            std::cout << "*** YOU WIN! Final score: " << score << " (press R to restart) ***\n";
+        } else {
+            loadLevel(level + 1);
         }
-    }
-
-    // Mouse Interaction
-    int mouseGridX = static_cast<int>(input.get_mouse_x()) / tileSize;
-    int mouseGridY = static_cast<int>(input.get_mouse_y()) / tileSize;
-
-    // Left Click: Place Wall
-    if (input.is_left_mouse_button_pressed()) {
-        if (!wasLeftMouseDown) {
-            if (!Board.isOutOfBounds(mouseGridX, mouseGridY) && !Board.isBlocked(mouseGridX, mouseGridY)) {
-                entities.push_back(std::unique_ptr<Entity>(new colored_entity(
-                    mouseGridX, mouseGridY, TileType::obstacle, 100, 160, 240, 255, Board
-                )));
-                std::cout << "[Mouse Placed Wall] at (" << mouseGridX << ", " << mouseGridY << ")\n";
-            }
-            wasLeftMouseDown = true;
-        }
-    } else {
-        wasLeftMouseDown = false;
-    }
-
-    // Right Click: Remove Wall
-    if (input.is_right_mouse_button_pressed()) {
-        if (!wasRightMouseDown) {
-            if (!Board.isOutOfBounds(mouseGridX, mouseGridY) && Board.getTile(mouseGridX, mouseGridY) == TileType::obstacle) {
-                Board.empty(mouseGridX, mouseGridY);
-
-                for (auto it = entities.begin(); it != entities.end(); ++it) {
-                    if ((*it)->getX() == mouseGridX && (*it)->getY() == mouseGridY) {
-                        entities.erase(it);
-                        std::cout << "[Mouse Removed Wall] at (" << mouseGridX << ", " << mouseGridY << ")\n";
-                        break;
-                    }
-                }
-            }
-            wasRightMouseDown = true;
-        }
-    } else {
-        wasRightMouseDown = false;
     }
 }
 
+// ----------------------------------------------------------------
+Entity* Game::entityAt(int x, int y, const Entity* ignore, bool blockersOnly) {
+    for (auto& e : entities) {
+        if (e.get() == ignore || !e->isAlive()) continue;
+        if (blockersOnly && !e->blocksMovement()) continue;
+        if (e->getX() == x && e->getY() == y) return e.get();
+    }
+    return nullptr;
+}
+
+bool Game::tryMove(Entity& e, int dx, int dy) {
+    int nx = e.getX() + dx;
+    int ny = e.getY() + dy;
+    if (Board.isOutOfBounds(nx, ny)) return false;
+
+    // Blocked tile: find out WHAT we bumped into and let both sides react.
+    if (Board.isBlocked(nx, ny)) {
+        Entity* other = entityAt(nx, ny, &e, true);
+        if (other) {
+            e.onCollision(*other, *this);
+            other->onCollision(e, *this);
+        }
+        return false;
+    }
+
+    e.SetPos(nx, ny, Board);
+
+    // Stepped onto walkable things (coins, potions, exit)?
+    for (size_t i = 0; i < entities.size(); ++i) {
+        Entity* o = entities[i].get();
+        if (o == &e || !o->isAlive() || o->blocksMovement()) continue;
+        if (o->getX() == nx && o->getY() == ny) {
+            e.onCollision(*o, *this);
+            o->onCollision(e, *this);
+        }
+    }
+    return true;
+}
+
+// ---------- events reported by entities ----------
+void Game::collectCoin() {
+    score += 10;
+    --coinsLeft;
+    std::cout << "[Coin] score " << score << ", coins left " << coinsLeft << "\n";
+}
+
+void Game::addLife() {
+    ++lives;
+    std::cout << "[Potion] lives " << lives << "\n";
+}
+
+void Game::damagePlayer() {
+    if (!player || player->isInvulnerable() || state != GameState::Playing) return;
+    --lives;
+    std::cout << "[Hit] lives " << lives << "\n";
+    if (lives <= 0) {
+        state = GameState::GameOver;
+        std::cout << "*** GAME OVER (press R to restart) ***\n";
+        return;
+    }
+    player->makeInvulnerable(1.5f);
+    player->SetPos(spawnX, spawnY, Board);      // back to start (if free)
+}
+
+// ----------------------------------------------------------------
 void Game::render(Renderer& renderer) {
     renderer.drawGrid(gridCols, gridRows, (float)tileSize);
 
-    for (auto& entity : entities) {
+    for (auto& entity : entities)
         entity->render((float)tileSize, renderer);
+
+    // HUD drawn on the top wall row: lives = red squares (left), coins left = yellow (right)
+    for (int i = 0; i < lives && i < 10; ++i)
+        renderer.draw_colored_rect(1 + i, 0, 1.0f, 0.2f, 0.2f, 1.0f);
+    for (int i = 0; i < coinsLeft && i < 15; ++i)
+        renderer.draw_colored_rect(gridCols - 2 - i, 0, 1.0f, 0.85f, 0.0f, 1.0f);
+
+    // end screens: a solid band across the middle
+    if (state != GameState::Playing) {
+        float r = (state == GameState::Won) ? 0.1f : 0.8f;
+        float g = (state == GameState::Won) ? 0.8f : 0.1f;
+        for (int y = gridRows / 2 - 2; y <= gridRows / 2 + 1; ++y)
+            for (int x = 0; x < gridCols; ++x)
+                renderer.draw_colored_rect(x, y, r, g, 0.1f, 1.0f);
     }
 }

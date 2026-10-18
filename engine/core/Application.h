@@ -11,7 +11,7 @@ using namespace std;
 class Application {
     const static int tileSize = 32;
     const static int gridCols = 40;
-    const static int gridRows = 24;
+    const static int gridRows = 22;
 
 public:
     Renderer renderer;
