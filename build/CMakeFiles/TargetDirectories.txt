@@ -1,3 +1,0 @@
-C:/Users/varsh/OneDrive/Desktop/oops/build/CMakeFiles/My2DGame.dir
-C:/Users/varsh/OneDrive/Desktop/oops/build/CMakeFiles/edit_cache.dir
-C:/Users/varsh/OneDrive/Desktop/oops/build/CMakeFiles/rebuild_cache.dir
