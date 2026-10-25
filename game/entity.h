@@ -35,7 +35,7 @@ public:
     void kill()          { alive = false; }   // Game removes it at end of frame
 };
 
-//---------colored_rectangle_entity--------------
+//colored_rectangle_entity
 class colored_entity : public Entity {
 protected:
     float r, g, b, a;
@@ -44,7 +44,7 @@ public:
     void render(float TileSize, Renderer& r);
 };
 
-//------------textured_entity---------------------
+//textured_entity
 class textured_entity : public Entity {
     texture tex;
 public:
