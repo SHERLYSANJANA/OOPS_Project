@@ -251,11 +251,11 @@ Sprites and animations · sound · a title/pause screen · smarter chaser pathfi
 ## 🙏 Credits
 
 - Windowing, graphics and input via [**Sokol**](https://github.com/floooh/sokol) by Andre Weissflog.
-- Team: _add your names here_
+- Team: 1.Sherly Sanjana.A, 2.Varsh Tiwari, 3.Pratik H.  
 
 ## 📄 License
 
-_Add a license (for example MIT) if you plan to share this publicly._
+None
 
 
 Game Look:
