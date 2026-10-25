@@ -23,12 +23,12 @@ public:
 class Enemy : public colored_entity {
 protected:
     float stepTimer = 0.0f;
-    float stepInterval;           // seconds between moves (smaller = faster)
+    float stepInterval;           
 public:
     Enemy(int x, int y, int r, int g, int b, float interval, Grid& board);
     void update(float dt, Game& game) override;          // timer, then takeStep()
-    void onCollision(Entity& other, Game& game) override; // touching the player hurts
-    virtual void takeStep(Game& game) = 0;               // each enemy type decides HOW to move
+    void onCollision(Entity& other, Game& game) override; 
+    virtual void takeStep(Game& game) = 0;              
 };
 
 class RandomEnemy : public Enemy {          // wanders randomly
