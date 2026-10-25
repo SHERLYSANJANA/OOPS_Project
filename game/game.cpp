@@ -2,11 +2,10 @@
 #include "Input.h"
 #include <iostream>
 
-// ---------------------------------------------------------------
 // Levels. Legend:  # wall   P player   C coin   H potion   X exit
 //                  R random enemy      E chaser enemy      . empty
 // Every level is 40 columns x 22 rows (matches the 1280x720 window).
-// ---------------------------------------------------------------
+
 static const std::vector<std::vector<std::string>> LEVELS = {
     {
         "########################################",
@@ -108,7 +107,7 @@ void Game::restart() {
     loadLevel(0);
 }
 
-// ----------------------------------------------------------------
+// --
 void Game::flushPending() {
     for (auto& e : pending) entities.push_back(std::move(e));
     pending.clear();
@@ -123,7 +122,7 @@ void Game::removeDead() {
     }
 }
 
-// ----------------------------------------------------------------
+// --
 void Game::update(float dt) {
     Input_manager input;
     if (input.is_pressed('R')) { restart(); return; }
@@ -149,7 +148,7 @@ void Game::update(float dt) {
     }
 }
 
-// ----------------------------------------------------------------
+// --
 Entity* Game::entityAt(int x, int y, const Entity* ignore, bool blockersOnly) {
     for (auto& e : entities) {
         if (e.get() == ignore || !e->isAlive()) continue;
@@ -188,7 +187,7 @@ bool Game::tryMove(Entity& e, int dx, int dy) {
     return true;
 }
 
-// ---------- events reported by entities ----------
+// events reported by entities
 void Game::collectCoin() {
     score += 10;
     --coinsLeft;
@@ -213,7 +212,7 @@ void Game::damagePlayer() {
     player->SetPos(spawnX, spawnY, Board);      // back to start (if free)
 }
 
-// ----------------------------------------------------------------
+// --
 void Game::render(Renderer& renderer) {
     renderer.drawGrid(gridCols, gridRows, (float)tileSize);
 
