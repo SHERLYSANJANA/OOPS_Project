@@ -1,13 +1,13 @@
 #pragma once
 #include "entity.h"
 
-// ===================== Wall =====================
+// Wall 
 class Wall : public colored_entity {
 public:
     Wall(int x, int y, Grid& board);
 };
 
-// ===================== Player =====================
+// Player
 class Player : public colored_entity {
     float moveTimer = 0.0f;       // limits movement speed
     float invulnerable = 0.0f;    // seconds of immunity after being hit
@@ -19,7 +19,7 @@ public:
     void makeInvulnerable(float seconds) { invulnerable = seconds; }
 };
 
-// ===================== Enemy (abstract) =====================
+// Enemy(abstract)
 class Enemy : public colored_entity {
 protected:
     float stepTimer = 0.0f;
@@ -43,7 +43,7 @@ public:
     void takeStep(Game& game) override;
 };
 
-// ===================== Item (abstract) =====================
+// Item(abstarct)
 class Item : public colored_entity {
 public:
     Item(int x, int y, int r, int g, int b, Grid& board);
@@ -62,7 +62,7 @@ public:
     void onCollision(Entity& other, Game& game) override;
 };
 
-// ===================== Exit =====================
+// EndGame
 class Exit : public colored_entity {
 public:
     Exit(int x, int y, Grid& board);
